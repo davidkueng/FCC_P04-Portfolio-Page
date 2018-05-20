@@ -3,4 +3,4 @@
 
 This project is done using the Angular 0.6.1 framework
 
-further instructions will follow..
+further instructions will follow here...
