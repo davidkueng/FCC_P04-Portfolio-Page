@@ -1,0 +1,30 @@
+<div>
+
+    <div class="container">  
+            <div class="col">
+                <p class="mt-5">Click this  <a href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">
+                    <button class="btn btn-dark btn-sm">Button</button></a>
+                    to open a random <img class="img" src="./assets/Wikipedia-logo.png"> article</p>               
+            </div>        
+            <div class="d-flex justify-content-center mt-3">                
+                <input type="text"  [(ngModel)]=inputEntry (keydown.enter)="(getArticle())"
+                placeholder="Or search for an article here!" class="form-control">
+            </div>                
+    </div>
+       
+        <div *ngFor="let content of articleContent" class="jumbotron jumbotron-fluid mt-3">   
+            <a class="search-result" href="https://en.wikipedia.org/wiki/{{content.title}}" target="_blank">           
+            <div class="bg-overlay animated">
+            <h4> 
+                {{ content.title }}
+            </h4>           
+                <div>
+                    <p [innerHTML]="content.snippet" class="snippet">
+                        {{ content.snippet }}                    
+                    </p>
+                </div> 
+            </div>              
+            </a> 
+        </div>                                
+        
+</div>
